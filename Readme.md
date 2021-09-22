@@ -13,6 +13,7 @@ step1. >nano /etc/hosts  <br  >
 step2. add 192.168.122.200 fit.mta fit
        add 192.168.122.201 r1 
        add 192.168.122.202 r2 
+step3. >service dnsmasq restart
        
 
 
