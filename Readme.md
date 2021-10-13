@@ -47,3 +47,23 @@ step3. >service dnsmasq restart
 
        chattr +i /etc/resolv.conf
        reboot now
+------configure firewall pfsense-------------- <br >
+1. open pfSense
+2. access to config by LAN adress 192.168.1.1 on em1
+3. login: admin , pfsense
+4. System > General Setup 
+5. change hostname: firewall
+    domain: home
+    primary dns: 
+    secondary dns:
+    override dns: deselect dns override
+6. Firewall > Rules
+    Add rules
+    choose Destination Range to SSH 
+    Description : block ssh  
+    save config
+-------configure DHCP------------------- <br >
+1. pull dhcp from https://hub.docker.com/r/gns3/dhcp 
+2. This container provide a basic DHCP server fro GNS3 topologies build on top of dnsmasq.
+       At first startup a sample config will be write in /etc/dnsmasq/dnsmaq.conf
+       You can customize the server by editing this file and restarting the container.
